@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.app {
+  background-color: rgb(226, 226, 226);
+  border-radius: 20px;
+  width: 680px;
+  margin: auto;
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+}
+
+.auth-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.auth-container > h1 {
+  font-size: 2em;
+  margin: 24px;
+}
+
+.auth-container > p {
+  margin: 16px;
+  text-decoration: underline;
+}
+
+.auth-container > form {
+  border-radius: 20px;
+  background-color: lightblue;
+  border: 1px solid #3339;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-container > form > input {
+  margin: 16px 8px;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.auth-container > form > button {
+  margin: 16px 8px;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.profile,
+.issues {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 75vh;
+}
+
+.profile > h1 {
+  margin: 8px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.issues > h1 {
+  margin: 8px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.issues > form {
+  border-radius: 20px;
+  background-color: lightblue;
+  border: 1px solid #3339;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.issues > form > input {
+  margin: 16px 8px;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.issues > form > button {
+  margin: 16px 8px;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.issue-list {
+  background-color: rgb(208, 208, 208);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.issue > h1 {
+  padding: 20px;
+  padding-right: 200px;
+  padding-left: 200px;
+  margin: 8px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.link {
+  cursor: pointer;
+}
