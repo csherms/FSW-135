@@ -1,34 +1,41 @@
 const express = require("express");
-const app = express();
 const morgan = require("morgan");
+const app = express();
+require("dotenv").config();
 const mongoose = require("mongoose");
+const expressJwt = require("express-jwt");
 
-app.use(express.json());
+// Middleware (for every request)
+app.use("/", express.json());
 app.use(morgan("dev"));
 
 // Connect to DB
-mongoose.connect(
-  "mongodb://localhost:27017/rockthevote-db",
-  {
+mongoose
+  .connect("mongodb://localhost:27017/rock-the-vote-db", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false,
-  },
-  () =>
-    console.log("You have successfully connected to the database. You rock!")
-);
+  })
+  .then(() => console.log("Connected to MongoDB"));
 
-// Main Endpoint
-app.use("/user", require("./routes/authRouter.js"));
+// Routes
+app.use("/auth", require("./routes/authRouter"));
+app.use(
+  "/api",
+  expressJwt({ secret: process.env.SECRET, algorithms: ["HS256"] })
+); //req.user
+app.use("/api/issues", require("./routes/issueRouter"));
+app.use("/api/comments", require("./routes/commentRouter"));
+app.use("/api/user", require("./routes/authRouter"));
 
-// Error handling
+// Error handler
 app.use((err, req, res, next) => {
   console.log(err);
   return res.send({ errMsg: err.message });
 });
 
-// Listen at Port 9000
+// Server Listen
 app.listen(9000, () => {
-  console.log("Server running on Port 9000 my dawg...");
+  console.log("The server is listening on port 9000!");
 });
