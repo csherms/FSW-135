@@ -20,6 +20,7 @@ export default function UserProvider(props) {
   };
   const [userState, setUserState] = useState(initState);
 
+  // Signup
   function signup(credentials) {
     axios
       .post("/auth/signup", credentials)
@@ -38,6 +39,7 @@ export default function UserProvider(props) {
       .catch((err) => console.log(err.response.data.errMsg));
   }
 
+  // Login
   function login(credentials) {
     axios
       .post("/auth/login", credentials)
@@ -58,6 +60,7 @@ export default function UserProvider(props) {
       .catch((err) => console.log(err.response.data.errMsg));
   }
 
+  // Logout
   function logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
