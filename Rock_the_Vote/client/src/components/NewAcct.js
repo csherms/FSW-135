@@ -5,6 +5,7 @@ export default function NewAcct(props) {
     handleChange,
     handleSubmit,
     btnText,
+    errMsg,
     inputs: { firstname, lastname, username, password },
   } = props;
 
@@ -39,6 +40,9 @@ export default function NewAcct(props) {
         placeholder='Password'
       />
       <button>{btnText}</button>
+      <p className='err-msg' style={{ backgroundColor: "red", color: "white" }}>
+        {errMsg}
+      </p>
     </form>
   );
 }

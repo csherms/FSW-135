@@ -12,7 +12,8 @@ export default function App() {
 
   return (
     <div className='app'>
-      <Navbar logout={logout} />
+      <h1 className='header'>Rock the Vote!</h1>
+      {token && <Navbar logout={logout} />}
       <Switch>
         <Route
           exact

@@ -15,7 +15,7 @@ export default function Auth() {
   const [loginInputs, setLoginInputs] = useState(initLoginInputs);
   const [newAcctInputs, setNewAcctInputs] = useState(initNewAcctInputs);
   const [toggle, setToggle] = useState(false);
-  const { signup, login } = useContext(UserContext);
+  const { signup, login, errMsg, resetAuthErr } = useContext(UserContext);
 
   function handleChangeLogin(e) {
     const { name, value } = e.target;
@@ -43,6 +43,11 @@ export default function Auth() {
     login(loginInputs);
   }
 
+  function toggleForm() {
+    setToggle((prev) => !prev);
+    resetAuthErr();
+  }
+
   return (
     <div className='auth-container'>
       {!toggle ? (
@@ -52,8 +57,9 @@ export default function Auth() {
             handleSubmit={handleLogin}
             inputs={loginInputs}
             btnText='Login'
+            errMsg={errMsg}
           />
-          <p className='link' onClick={() => setToggle((prev) => !prev)}>
+          <p className='link' onClick={toggleForm}>
             Not a member?
           </p>
         </>
@@ -64,8 +70,9 @@ export default function Auth() {
             handleSubmit={handleSignup}
             inputs={newAcctInputs}
             btnText='Sign up'
+            errMsg={errMsg}
           />
-          <p className='link' onClick={() => setToggle((prev) => !prev)}>
+          <p className='link' onClick={toggleForm}>
             Already a member?
           </p>
         </>
