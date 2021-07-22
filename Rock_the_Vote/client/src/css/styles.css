@@ -6,12 +6,30 @@
   margin-top: 20px;
 }
 
+body {
+  background-image: url("https://s7d2.scene7.com/is/image/TWCNews/istock-generic-election-buttons-votingjpg3840x2160jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  background-attachment: fixed;
+}
+
 .app {
   background-color: rgb(226, 226, 226);
   border-radius: 20px;
   width: 680px;
   margin: auto;
   padding: 20px;
+}
+
+.app > h1 {
+  text-align: center;
+  background-color: black;
+  border-radius: 50px;
+  font-size: 25px;
+  margin-right: 200px;
+  margin-left: 200px;
+  color: rgb(255, 255, 0, 0.8);
 }
 
 .header {
@@ -45,7 +63,7 @@
 
 .auth-container > form {
   border-radius: 20px;
-  background-color: lightblue;
+  background-color: darkblue;
   border: 1px solid #3339;
   padding: 20px;
   display: flex;
@@ -70,12 +88,21 @@
   flex-direction: column;
   align-items: center;
   height: 75vh;
+  background-image: url("https://images2.minutemediacdn.com/image/upload/c_crop,h_1602,w_2381,x_9,y_0/v1591714472/shape/mentalfloss/50913-gettyimages-1154460019.jpg?itok=FX6bz08s");
+  background-position: left;
+  background-size: cover;
+  padding: 25px;
+  border-radius: 10px;
 }
 
 .profile > h1 {
   margin: 8px;
+  padding: 20px;
   font-size: 2em;
+  border-radius: 10px;
   text-align: center;
+  color: white;
+  background-color: rgba(51, 51, 168, 0.9);
 }
 
 .issues > h1 {
@@ -86,7 +113,7 @@
 
 .issues > form {
   border-radius: 20px;
-  background-color: lightblue;
+  background-color: darkblue;
   border: 1px solid #3339;
   padding: 20px;
   display: flex;
@@ -106,10 +133,12 @@
 }
 
 .issue-list {
-  background-color: rgb(208, 208, 208);
+  background-color: rgba(51, 51, 168, 0.9);
+  color: white;
   border-radius: 20px;
   padding: 20px;
   text-align: center;
+  box-shadow: 4px 8px 0px 5px rgba(0, 0, 0, 0.7);
 }
 
 .issue > h1 {
@@ -123,4 +152,8 @@
 
 .link {
   cursor: pointer;
+}
+
+.comments {
+  font-size: 20px;
 }

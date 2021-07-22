@@ -12,13 +12,13 @@ export default function App() {
 
   return (
     <div className='app'>
-      <h1 className='header'>Rock the Vote!</h1>
+      <h1>Rock the Vote!</h1>
       {token && <Navbar logout={logout} />}
       <Switch>
         <Route
           exact
           path='/'
-          render={() => (token ? <Redirect to='/profile' /> : <Auth />)}
+          render={() => (token ? <Redirect to='/issues' /> : <Auth />)}
         />
         <ProtectedRoute
           path='/profile'

@@ -27,7 +27,6 @@ app.use(
 ); //req.user
 app.use("/api/issues", require("./routes/issueRouter"));
 app.use("/api/comments", require("./routes/commentRouter"));
-app.use("/api/user", require("./routes/authRouter"));
 
 // Error handler
 app.use((err, req, res, next) => {

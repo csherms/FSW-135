@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// Issue Blueprint
 const issueSchema = new Schema({
   title: {
     type: String,

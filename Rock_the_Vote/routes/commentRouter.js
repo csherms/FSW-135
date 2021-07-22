@@ -13,40 +13,19 @@ commentRouter.route("/").get((req, res, next) => {
   });
 });
 
-// post a new comment by issue id
-commentRouter.route("/:issueId").post((req, res, next) => {
+// post a new comment based on issue id
+commentRouter.route("/add/:issueId").post((req, res, next) => {
   req.body.issue = req.params.issueId;
+  req.body.user = req.user._id;
+
   const newComment = new Comment(req.body);
+
   newComment.save((err, savedComment) => {
     if (err) {
       res.status(500);
       return next(err);
     }
     return res.status(201).send(savedComment);
-  });
-});
-
-// get all comments by issue id
-commentRouter.route("/byIssue/:issueId").get((req, res, next) => {
-  Comment.find({ issue: req.params.issueId }, (err, comments) => {
-    if (err) {
-      res.status(500);
-      return next(err);
-    }
-    return res.status(200).send(comments);
-  });
-});
-
-// get comment by comment id
-commentRouter.route("/:commentId").get((req, res, next) => {
-  console.log(req.params);
-
-  Comment.findById(req.params.commentId, (err, comment) => {
-    if (err) {
-      res.status(500);
-      return next(err);
-    }
-    return res.status(200).send(comment);
   });
 });
 

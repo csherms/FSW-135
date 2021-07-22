@@ -1,0 +1,10 @@
+Take out week 1-8
+upload video with every assignment testing things out in postman.
+we will be learning mongo db and mongoose
+
+
+// Tips for after school
+Get AWS Assosiates Certificate with 'developer' in it.
+Take Udemy Course -- McHardy says his prof was a german guy named Max
+More Scrimba
+McHardy love apprentiship programs

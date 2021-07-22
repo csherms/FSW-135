@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// Comment Blueprint
-const commentSchema = new Schema({
-  voted: {
-    type: Boolean,
+// Votes Blueprint
+const votesSchema = new Schema({
+  vote: {
+    type: String,
     required: true,
   },
   issue: {
@@ -19,4 +19,4 @@ const commentSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("Comment", commentSchema);
+module.exports = mongoose.model("Votes", votesSchema);

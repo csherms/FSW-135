@@ -26,7 +26,14 @@ export default function Login(props) {
         placeholder='Password'
       />
       <button>{btnText}</button>
-      <p className='err-msg' style={{ backgroundColor: "red", color: "white" }}>
+      <p
+        className='err-msg'
+        style={{
+          backgroundColor: "red",
+          textAlign: "center",
+          color: "white",
+        }}
+      >
         {errMsg}
       </p>
     </form>
